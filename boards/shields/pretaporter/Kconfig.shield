@@ -1,0 +1,5 @@
+config SHIELD_PRETAPORTER_R
+    def_bool $(shields_list_contains,pretaporter_r)
+
+config SHIELD_PRETAPORTER_L
+    def_bool $(shields_list_contains,pretaporter_l)
