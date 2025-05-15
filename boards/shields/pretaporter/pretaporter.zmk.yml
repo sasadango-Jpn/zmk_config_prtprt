@@ -2,7 +2,7 @@ file_format: "1"
 id: pretaporter
 name: pretaporter
 type: shield
-url: https://github.com/sasadango-Jpn/zmk_config_prtprt.git
+url: https://github.com/sasadango-Jpn/zmk_config_prtprt
 requires: [seeeduino_xiao_ble]
 features:
   - keys
