@@ -1,4 +1,6 @@
 {
+  "id": "pretaporter",
+  "name": "pretaporter",
   "layouts": {
     "default_layout": {
       "name": "default_layout",
