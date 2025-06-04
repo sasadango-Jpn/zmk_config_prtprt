@@ -18,7 +18,7 @@
 
         mo6 {
             bindings = <&mo 6>;
-            key-positions = <29 30>;
+            key-positions = <17 18>;
         };
     };
 
