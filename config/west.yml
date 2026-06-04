@@ -2,22 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: sasadango-Jpn
-      url-base: https://github.com/sasadango-Jpn
-    - name: kumamuk-git
-      url-base: https://github.com/kumamuk-git
-    - name: caksoylar  # <-- RGB LED
-      url-base: https://github.com/caksoylar  
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.1.0-point
+      revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: kumamuk-git
-      revision: main
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
   self:
     path: config
