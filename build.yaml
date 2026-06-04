@@ -18,10 +18,11 @@
 #
 ---
 ---
+---
 include:
-  - board: xiao_ble  # ← ここを「xiao_ble」に変更
-    shield: pretaporter_r rgbled_adapter
-  - board: xiao_ble  # ← ここを「xiao_ble」に変更
-    shield: pretaporter_l rgbled_adapter
-  - board: xiao_ble  # ← ここを「xiao_ble」に変更
+  - board: xiao_ble/nrf52840  # ← ここを「xiao_ble/nrf52840」にする
+    shield: pretaporter_r
+  - board: xiao_ble/nrf52840  # ← ここを「xiao_ble/nrf52840」にする
+    shield: pretaporter_l
+  - board: xiao_ble/nrf52840  # ← ここを「xiao_ble/nrf52840」にする
     shield: settings_reset
