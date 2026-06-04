@@ -3,4 +3,38 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@22f4625b1285bc0b0d3674ed4e08c6913160e1d5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache west modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-zephyr-modules
+        with:
+          path: |
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
+
+      - name: Initialize workspace (West)
+        uses: zmkfirmware/zmk-build-action@v2
+        with:
+          repository_url: https://github.com/zmkfirmware/zmk
+          branch: main
+          config_path: config
+
+      - name: Build ZMK Firmware
+        uses: zmkfirmware/zmk-build-action@v2
+        with:
+          build_matrix_path: config/build.yaml
+          config_path: config
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: build/artifacts/
