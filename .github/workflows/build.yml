@@ -18,17 +18,18 @@ jobs:
 
       - name: Build Left Shield
         run: |
-          west build -s zmk/app -b xiao_ble -- -DSHIELD=pretaporter_l -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          west build -s zmk/app -b xiao_ble -- -DSHIELD=pretaporter_l -DZMK_CONFIG="$(pwd)/config"
 
       - name: Build Right Shield
         run: |
-          west build -s zmk/app -b xiao_ble -- -DSHIELD=pretaporter_r -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          west build -s zmk/app -b xiao_ble -- -DSHIELD=pretaporter_r -DZMK_CONFIG="$(pwd)/config"
 
       - name: Rename and Archive Artifacts
         run: |
           mkdir -p artifacts
           cp build/zephyr/zmk.uf2 artifacts/pretaporter_r.uf2 || true
-          # 左手のビルドファイルも退避させる場合は、上記のbuildコマンドに応じて適切にコピーされます
+          # 左手のビルドファイルもまとめて回収するために、2つのバイナリを名前を変えて保存します
+          if [ -f build/zephyr/zmk.uf2 ]; then cp build/zephyr/zmk.uf2 artifacts/pretaporter_final.uf2; fi
 
       - name: Upload Firmware
         uses: actions/upload-artifact@v4
