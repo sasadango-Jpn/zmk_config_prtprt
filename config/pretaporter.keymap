@@ -93,7 +93,7 @@
 &kp EXCLAMATION       &kp AT_SIGN     &kp HASH          &kp DOLLAR  &kp PERCENT                                   &kp CARET  &kp AMPERSAND  &kp ASTERISK       &kp MINUS       &kp EQUAL
 &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_UP                               &trans     &kp SEMI       &kp APOS           &kp UNDERSCORE  &kp PLUS
 &kp C_BRIGHTNESS_DEC  &trans          &trans            &trans      &kp C_VOLUME_DOWN  &kp LBKT    &kp RBKT       &trans     &kp COLON      &kp DOUBLE_QUOTES  &kp BSLH        &kp GRAVE
-&trans                &trans          &SSAll            &SSPart1    &trans             &trans      &kp BACKSPACE  &trans                                       &kp LS(BSLH)    &kp LS(GRAVE)
+&trans                &trans          &SSAll            &SSPart1    &trans             &trans      &kp BACKSPACE  &kp ESC                                      &kp LS(BSLH)    &kp LS(GRAVE)
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
