@@ -1,8 +1,8 @@
 # This file generates the GitHub Actions matrix.
 include:
-  - board: seeed_xiao_ble/nrf52840
+  - board: xiao_ble
     shield: pretaporter_r
-  - board: seeed_xiao_ble/nrf52840
+  - board: xiao_ble
     shield: pretaporter_l
-  - board: seeed_xiao_ble/nrf52840
+  - board: xiao_ble
     shield: settings_reset
